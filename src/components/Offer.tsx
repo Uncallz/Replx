@@ -16,7 +16,7 @@ const Offer = () => {
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
 
   const generateCode = () => {
-    return 'REPLX10' + Math.random().toString(36).substring(2, 8).toUpperCase();
+    return 'REPLX09';
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -87,7 +87,7 @@ const Offer = () => {
 
             {!isSubmitted ? (
               <div className="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
-                <form id="discountForm" onSubmit={handleSubmit} className="space-y-4">
+                <form id="discountForm" className="space-y-4">
                   <div>
                     <input
                       type="email"

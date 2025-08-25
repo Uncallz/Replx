@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (result.success) {
-                showMessage('discountMessage', '🎉 Check your email! Your discount code is on its way!', 'success');
+                showMessage('discountMessage', '🎉 Success! Your discount code is: <strong>REPLX09</strong>', 'success');
                 discountForm.reset();
             } else {
                 showMessage('discountMessage', `❌ ${result.error}`, 'error');
