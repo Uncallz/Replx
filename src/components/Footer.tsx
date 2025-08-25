@@ -74,13 +74,38 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Info Section */}
+          {/* VIP Form Section */}
           <div className="bg-gray-800 dark:bg-gray-900 p-6 rounded-xl md:flex-1 w-full">
             <h3 className="text-lg font-semibold mb-3">{t('footer.joinDropList')}</h3>
             <p className="text-gray-400 text-sm mb-5">{t('footer.dropListDescription')}</p>
-            <div className="text-center">
-              <p className="text-sm text-gray-400">{t('footer.thankYou')}</p>
-            </div>
+            <form id="vipForm" className="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  id="vipName"
+                  placeholder={t('footer.namePlaceholder') || 'Your Name'}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  id="vipEmail"
+                  placeholder={t('footer.emailPlaceholder') || 'your@email.com'}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                id="vipBtn"
+                className="w-full bg-[#0A84FF] text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-200"
+              >
+                Join VIP List ⚡
+              </button>
+            </form>
+            <div id="vipMessage" className="mt-4"></div>
           </div>
         </div>
 
