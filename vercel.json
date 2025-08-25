@@ -5,7 +5,7 @@
     }
   },
   "env": {
-    "BREVO_API_KEY": "@brevo-api-key"
+    "BREVO_API_KEY": "@brevo_api_key"
   },
   "headers": [
     {
