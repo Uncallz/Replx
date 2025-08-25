@@ -48,13 +48,19 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-// Wait for DOM to be loaded
-document.addEventListener('DOMContentLoaded', function() {
+// Function to attach form handlers
+function attachFormHandlers() {
+    console.log('Attempting to attach form handlers');
+    
     // Discount form handler
     const discountForm = document.getElementById('discountForm');
-    if (discountForm) {
+    console.log('Discount form found:', discountForm);
+    if (discountForm && !discountForm.hasAttribute('data-handler-attached')) {
+        console.log('Attaching discount form handler');
+        discountForm.setAttribute('data-handler-attached', 'true');
         discountForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            console.log('Discount form submitted - preventDefault called');
             
             const email = document.getElementById('discountEmail').value;
             const btn = document.getElementById('discountBtn');
@@ -83,9 +89,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // VIP form handler
     const vipForm = document.getElementById('vipForm');
-    if (vipForm) {
+    console.log('VIP form found:', vipForm);
+    if (vipForm && !vipForm.hasAttribute('data-handler-attached')) {
+        console.log('Attaching VIP form handler');
+        vipForm.setAttribute('data-handler-attached', 'true');
         vipForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            console.log('VIP form submitted - preventDefault called');
             
             const email = document.getElementById('vipEmail').value;
             const btn = document.getElementById('vipBtn');
@@ -132,7 +142,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.borderColor = '#dc3545';
             } else {
                 this.style.borderColor = '#ddd';
-            }
-        });
-    }
+        }
+    });
+}
+}
+
+// Try to attach handlers when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded - attempting to attach handlers');
+    attachFormHandlers();
 });
+
+// Also try periodically in case React components load later
+let retryCount = 0;
+const maxRetries = 10;
+const retryInterval = setInterval(() => {
+    retryCount++;
+    console.log(`Retry attempt ${retryCount}`);
+    attachFormHandlers();
+    
+    if (retryCount >= maxRetries) {
+        clearInterval(retryInterval);
+        console.log('Stopped retrying after', maxRetries, 'attempts');
+    }
+}, 1000);
