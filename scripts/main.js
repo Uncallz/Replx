@@ -1,3 +1,5 @@
+console.log('JavaScript loaded - main.js is running');
+
 // Configurazione API locale
 const API_CONFIG = {
     baseUrl: window.location.origin
@@ -150,6 +152,16 @@ function attachFormHandlers() {
 // Try to attach handlers when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded - attempting to attach handlers');
+    console.log('Available forms:', {
+        discountForm: document.getElementById('discountForm'),
+        vipForm: document.getElementById('vipForm')
+    });
+    attachFormHandlers();
+});
+
+// Also try when window loads (after all resources)
+window.addEventListener('load', function() {
+    console.log('Window loaded - attempting to attach handlers again');
     attachFormHandlers();
 });
 
