@@ -1,37 +1,36 @@
-const BREVO_CONFIG = {
-    apiKey: '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',
-    discountListId: [3],
-    vipListId: [4],
-    apiUrl: 'https://api.brevo.com/v3/contacts'
+// Configurazione API locale
+const API_CONFIG = {
+    baseUrl: window.location.origin
 };
 
-async function subscribeToBrevo(email, firstName, listIds, formType) {
+// Funzione per iscrivere un utente tramite API serverless
+async function subscribeToBrevo(email, firstName, listType, formType) {
     try {
-        const response = await fetch(BREVO_CONFIG.apiUrl, {
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/subscribe`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'api-key': BREVO_CONFIG.apiKey
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 email: email,
-                attributes: {
-                    FIRSTNAME: firstName || ''
-                },
-                listIds: listIds,
-                updateEnabled: true
+                firstName: firstName,
+                listType: listType
             })
         });
 
-        if (response.ok || response.status === 204) {
-            return { success: true };
-        } else {
-            const errorData = await response.json();
-            return { success: false, error: errorData.message || 'Subscription failed' };
+        const result = await response.json();
+
+        if (!response.ok) {
+            console.error('Errore API:', result);
+            throw new Error(result.error || 'Errore durante l\'iscrizione');
         }
+
+        return { success: true, message: result.message || 'Iscrizione completata!' };
+        
     } catch (error) {
-        return { success: false, error: 'Network error. Please try again.' };
+        console.error('Errore nella sottoscrizione:', error);
+        return { success: false, error: error.message || 'Errore durante l\'iscrizione. Riprova più tardi.' };
     }
 }
 
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = await subscribeToBrevo(
                 email, 
                 firstName, 
-                BREVO_CONFIG.discountListId, 
+                'discount', 
                 'discount'
             );
             
@@ -99,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = await subscribeToBrevo(
                 email, 
                 firstName, 
-                BREVO_CONFIG.vipListId, 
+                'vip', 
                 'vip'
             );
             
