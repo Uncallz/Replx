@@ -39,8 +39,12 @@ npm i -g vercel
 # Deploy
 vercel
 
-# Aggiungi la variabile d'ambiente
-vercel env add BREVO_API_KEY
+# Aggiungi la variabile d'ambiente tramite dashboard Vercel:
+# 1. Vai su vercel.com/dashboard
+# 2. Seleziona il tuo progetto
+# 3. Vai in Settings > Environment Variables
+# 4. Aggiungi: BREVO_API_KEY = your_actual_api_key
+# 5. Redeploy il progetto
 ```
 
 ### 3. Configurazione Liste Brevo
