@@ -142,9 +142,9 @@ function attachFormHandlers() {
                 this.style.borderColor = '#dc3545';
             } else {
                 this.style.borderColor = '#ddd';
-        }
-    });
-}
+            }
+        });
+    }
 }
 
 // Try to attach handlers when DOM is loaded
