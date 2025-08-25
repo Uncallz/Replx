@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const email = document.getElementById('discountEmail').value;
-            const firstName = document.getElementById('discountName').value;
             const btn = document.getElementById('discountBtn');
             
             btn.disabled = true;
@@ -65,20 +64,20 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const result = await subscribeToBrevo(
                 email, 
-                firstName, 
+                '', // No firstName since we removed the name field
                 'discount', 
                 'discount'
             );
             
             if (result.success) {
-                showMessage('discountMessage', '🎉 Check your email! Your REPLX09 discount code is on its way!', 'success');
+                showMessage('discountMessage', '🎉 Check your email! Your discount code is on its way!', 'success');
                 discountForm.reset();
             } else {
                 showMessage('discountMessage', `❌ ${result.error}`, 'error');
             }
             
             btn.disabled = false;
-            btn.textContent = 'Get REPLX09 Code 🎉';
+            btn.textContent = 'Get Code';
         });
     }
 
@@ -89,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const email = document.getElementById('vipEmail').value;
-            const firstName = document.getElementById('vipName').value;
             const btn = document.getElementById('vipBtn');
             
             btn.disabled = true;
@@ -97,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const result = await subscribeToBrevo(
                 email, 
-                firstName, 
+                '', // No firstName since we removed the name field
                 'vip', 
                 'vip'
             );

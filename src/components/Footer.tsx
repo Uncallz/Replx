@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 import { useLanguage } from '../hooks/useLanguage';
 
@@ -81,18 +80,9 @@ const Footer = () => {
             <form id="vipForm" className="space-y-4">
               <div>
                 <input
-                  type="text"
-                  id="vipName"
-                  placeholder={t('footer.namePlaceholder') || 'Your Name'}
-                  className="w-full px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-              <div>
-                <input
                   type="email"
                   id="vipEmail"
-                  placeholder={t('footer.emailPlaceholder') || 'your@email.com'}
+                  placeholder="Enter your email address"
                   className="w-full px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />

@@ -90,18 +90,9 @@ const Offer = () => {
                 <form id="discountForm" onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <input
-                      type="text"
-                      id="discountName"
-                      placeholder={t('offer.namePlaceholder') || 'Your Name'}
-                      className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
                       type="email"
                       id="discountEmail"
-                      placeholder={t('offer.emailPlaceholder') || 'your@email.com'}
+                      placeholder="Enter your email address"
                       className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
@@ -111,7 +102,7 @@ const Offer = () => {
                     id="discountBtn"
                     className="w-full bg-white text-[#0A84FF] py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
                   >
-                    Get REPLX09 Code 🎉
+                    Get Code
                   </button>
                 </form>
                 <div id="discountMessage" className="mt-4"></div>
