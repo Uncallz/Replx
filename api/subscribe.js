@@ -15,12 +15,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { email, firstName, listType } = req.body;
+    const { email, listType } = req.body;
 
     // Validazione input
-    if (!email || !firstName || !listType) {
+    if (!email || !listType) {
       return res.status(400).json({ 
-        error: 'Email, firstName e listType sono richiesti' 
+        error: 'Email e listType sono richiesti' 
       });
     }
 
@@ -67,7 +67,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         email: email,
         attributes: {
-          FIRSTNAME: firstName
+          FIRSTNAME: 'Cliente'
         },
         listIds: [listId],
         updateEnabled: true

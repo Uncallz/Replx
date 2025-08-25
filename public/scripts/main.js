@@ -6,7 +6,7 @@ const API_CONFIG = {
 };
 
 // Funzione per iscrivere un utente tramite API serverless
-async function subscribeToBrevo(email, firstName, listType, formType) {
+async function subscribeToBrevo(email, listType, formType) {
     try {
         const response = await fetch(`${API_CONFIG.baseUrl}/api/subscribe`, {
             method: 'POST',
@@ -16,7 +16,6 @@ async function subscribeToBrevo(email, firstName, listType, formType) {
             },
             body: JSON.stringify({
                 email: email,
-                firstName: firstName,
                 listType: listType
             })
         });
@@ -72,7 +71,6 @@ function attachFormHandlers() {
             
             const result = await subscribeToBrevo(
                 email, 
-                '', // No firstName since we removed the name field
                 'discount', 
                 'discount'
             );
@@ -107,7 +105,6 @@ function attachFormHandlers() {
             
             const result = await subscribeToBrevo(
                 email, 
-                '', // No firstName since we removed the name field
                 'vip', 
                 'vip'
             );
