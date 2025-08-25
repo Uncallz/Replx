@@ -1,0 +1,202 @@
+{
+  "header": {
+    "navigation": {
+      "drops": "Drop",
+      "howToOrder": "Comment Commander",
+      "whyReplx": "Pourquoi REPLX",
+      "getDiscount": "Obtenez 10% de Réduction",
+      "faq": "FAQ",
+      "vintedProfiles": "Profils Vinted"
+    },
+    "buttons": {
+      "joinDrop": "Rejoignez le Drop Exclusif"
+    }
+  },
+  "hero": {
+    "tagline": "Facile. Ça commence en chat. Seulement sur Vinted",
+    "title": {
+      "line1": "Portez l'Instant",
+      "line2": "Possédez la Légende"
+    },
+    "description": {
+      "line1": "Maillots d'élite de football et NBA pour adultes et enfants",
+      "line2": "Qualité soignée, prix justes, expédition rapide."
+    },
+    "buttons": {
+      "joinDrop": "Rejoignez le Drop Exclusif",
+      "vintedProfiles": "Ouvrez nos Profils Vinted"
+    }
+  },
+  "howToOrder": {
+    "title": "Comment Commander",
+    "subtitle": "Simple, sécurisé et exclusivement via Vinted",
+    "step1Title": "Choisissez un maillot sur nos profils Vinted",
+    "step1Description": "Parcourez notre collection soignée de maillots de football et NBA sur nos profils Vinted dédiés.",
+    "step2Title": "Écrivez-nous sur Vinted",
+    "step2Description": "Envoyez-nous un message via Vinted avec le maillot que vous désirez. Nous répondrons rapidement avec la disponibilité.",
+    "step3Title": "Nous vous envoyons une Offre réduite",
+    "step3Description": "Recevez une offre spéciale réduite directement via le système de messagerie sécurisé de Vinted."
+  },
+  "value": {
+    "forFansTitle": "Pour les Supporters",
+    "forFansDescription": "Les couleurs de l'équipe amplifient l'identité et l'émotion du jour de match. Le bon maillot transforme un match en rituel.",
+    "forCollectorsTitle": "Pour les Collectionneurs",
+    "forCollectorsDescription": "L'état, les détails et l'époque comptent. Notre attention se concentre sur le tissu, les coutures et les saisons iconiques.",
+    "forAthletesTitle": "Pour les Athlètes",
+    "forAthletesDescription": "Tissus respirants et coupes nettes soutiennent le confort et la confiance."
+  },
+  "compare": {
+    "title": "Pourquoi REPLX",
+    "criteria": "Critères",
+    "replx": "REPLX",
+    "competitorA": "Concurrent A",
+    "competitorB": "Concurrent B",
+    "priceQualityRatio": "Rapport Qualité-Prix",
+    "priceQualityReplx": "Élevé",
+    "priceQualityCompA": "Moyen",
+    "priceQualityCompB": "Moyen",
+    "fabricStitching": "Tissu et Coutures",
+    "fabricStitchingReplx": "Soigné, coutures renforcées",
+    "fabricStitchingCompA": "Standard",
+    "fabricStitchingCompB": "Standard",
+    "qualityCheck": "Contrôle Qualité",
+    "qualityCheckReplx": "Inspection manuelle",
+    "qualityCheckCompA": "Base",
+    "qualityCheckCompB": "Base",
+    "shipping": "Expédition (EU)",
+    "shippingReplx": "Gestion rapide, expédition 48h",
+    "shippingCompA": "Plus lente",
+    "shippingCompB": "Variable",
+    "returns": "Retours",
+    "returnsReplx": "Support 14 jours",
+    "returnsCompA": "Limité",
+    "returnsCompB": "Limité",
+    "customization": "Personnalisation",
+    "customizationReplx": "Sur demande (cas par cas)",
+    "customizationCompA": "—",
+    "customizationCompB": "—",
+    "sizeRange": "Gamme de Tailles",
+    "sizeRangeReplx": "Enfants → Adultes",
+    "sizeRangeCompA": "Adultes seulement",
+    "sizeRangeCompB": "Enfants limités",
+    "liveChat": "Support Chat Live",
+    "liveChatReplx": "Chat Vinted",
+    "liveChatCompA": "Email seulement",
+    "liveChatCompB": "—",
+    "returnReplx": "30 Jours",
+    "returnCompA": "14 Jours",
+    "returnCompB": "Aucun Retour"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Questions communes sur REPLX",
+    "question1": "Êtes-vous affiliés avec des équipes ou ligues?",
+    "answer1": "Non. REPLX est une marque indépendante non affiliée avec aucune équipe ou ligue.",
+    "question2": "Vendez-vous des tailles pour adultes et enfants?",
+    "answer2": "Oui — Enfants et Adultes. Demandez-nous sur Vinted pour des conseils de taille.",
+    "question3": "Quelle est la rapidité de l'expédition?",
+    "answer3": "Nous visons l'expédition en 48h pour la plupart des articles.",
+    "question4": "Quelle est votre politique de retour?",
+    "answer4": "Support 14 jours. Écrivez-nous sur Vinted pour de l'aide.",
+    "question5": "Comment utiliser la réduction de 10%?",
+    "answer5": "Envoyez votre email sur cette page pour obtenir un code personnel. Dans le chat Vinted, écrivez \"10% via email\" + votre code; nous vous enverrons une Offre réduite."
+  },
+  "rating": {
+    "text": "Noté 5/5 par nos clients",
+    "customerRating": "\"Noté 5/5 par nos clients\""
+  },
+  "social": {
+    "title": "Entrez en Contact",
+    "subtitle": "Connectez-vous avec nous via nos canaux sociaux",
+    "vintedProfilesTitle": "Nos Profils Vinted",
+    "vintedNBA": "Vinted — NBA (incl. Enfants)",
+    "vintedNBADescription": "Maillots de basket pour tous âges",
+    "vintedKids": "Vinted — Kit Enfants",
+    "vintedKidsDescription": "Kits complets pour jeunes athlètes",
+    "vintedFootball": "Vinted — Football",
+    "vintedFootballDescription": "Collection maillots de football",
+    "visitProfile": "Visiter le Profil",
+    "comingSoon": "Bientôt Disponible",
+    "followUs": "Suivez-nous"
+  },
+  "drops": {
+    "title": "Maillots en Vedette",
+    "classicFootball": "Maillot Football Classique",
+    "dispatch48h": "Expédition 48h",
+    "nbaShirt": "Maillot NBA",
+    "sizeAdvice": "Conseils taille en chat",
+    "kidsFullKit": "Kit Complet Enfants",
+    "customization": "Personnalisation",
+    "iconicRetro": "Rétro Iconiques",
+    "curatedQuality": "Qualité soignée",
+    "limitedEdition": "Édition Limitée",
+    "liveChatSupport": "Support chat live",
+    "dmToOrder": "Commandez ici",
+    "joinExclusiveDrop": "Rejoignez le Drop Exclusif"
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "drops": "Drops",
+    "howToOrder": "Comment Commander",
+    "whyReplx": "Pourquoi REPLX",
+    "get10Off": "Obtenez 10% de Réduction",
+    "faq": "FAQ",
+    "social": "Social",
+    "description": "REPLX - Maillots d'élite de football et NBA pour adultes et enfants",
+    "tagline": "Qualité soignée, prix équitables, expédition rapide.",
+    "contactUs": "Contactez-nous:",
+    "joinDropList": "Rejoignez la Liste Drop",
+    "dropListDescription": "Obtenez un accès anticipé et des offres exclusives.",
+    "enterEmail": "Entrez votre email",
+    "agreeToEmails": "J'accepte de recevoir des emails de REPLX",
+    "join": "Rejoindre",
+    "subscribed": "Inscrit!",
+    "thankYou": "Merci de vous être joint à la liste drop.",
+    "copyright": "© REPLX. Non affilié avec aucune équipe ou ligue.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions"
+  },
+  "offer": {
+    "title": "Obtenez 10% via Email",
+    "description": "Un code unique par email.",
+    "instructions": "Utilisez-le dans le chat Vinted au checkout. Expire le 30 septembre 2025.",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "enterEmail": "Entrez votre email",
+    "agreeToEmails": "J'accepte de recevoir des emails de REPLX et j'accepte la Confidentialité.",
+    "sendCode": "Envoyez-moi mon code",
+    "success": "Succès!",
+    "yourCode": "Votre code de réduction unique:",
+    "useCode": "Utilisez ce code dans le chat Vinted pour obtenir 10% de réduction!",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "pleaseEnterEmail": "❌ Entrez votre email",
+    "pleaseEnterValidEmail": "❌ Entrez un email valide",
+    "pleaseAcceptTerms": "❌ Acceptez les conditions de confidentialité",
+    "sending": "Envoi en cours...",
+    "successMessage": "🎉 Parfait! Nous avons envoyé votre code de réduction de 10% à {{email}}. Vérifiez votre boîte!",
+    "emailFailedButCodeGenerated": "⚠️ Nous n'avons pas pu envoyer l'email, mais voici votre code de réduction de 10%!",
+    "codeCopied": "✓ Code de réduction copié dans le presse-papiers!",
+    "copyFailed": "❌ Impossible de copier le code. Sélectionnez et copiez manuellement."
+  },
+  "header": {
+    "drops": "Drops",
+    "howToOrder": "Comment Commander",
+    "whyReplx": "Pourquoi REPLX",
+    "getDiscount": "Obtenez 10% de Réduction",
+    "faq": "FAQ",
+    "vintedProfiles": "Profils Vinted",
+    "joinExclusiveDrop": "Rejoignez le Drop Exclusif"
+  },
+  "hero": {
+    "tagline": "Facile. Ça commence en chat. Seulement sur Vinted.",
+    "title1": "Portez l'Instant",
+    "title2": "Possédez la Légende",
+    "subtitle1": "Maillots d'élite de football et NBA pour adultes et enfants",
+    "subtitle2": "Qualité soignée, prix justes, expédition rapide.",
+    "joinExclusiveDrop": "Rejoignez le Drop Exclusif",
+    "openVintedProfiles": "Ouvrez nos Profils Vinted"
+  }
+}

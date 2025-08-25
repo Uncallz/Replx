@@ -1,0 +1,204 @@
+{
+  "header": {
+    "navigation": {
+      "drops": "Drops",
+      "howToOrder": "How to Order",
+      "whyReplx": "Why REPLX",
+      "getDiscount": "Get 10% Off",
+      "faq": "FAQ",
+      "vintedProfiles": "Vinted Profiles"
+    },
+    "buttons": {
+      "joinDrop": "Join Exclusive Drop"
+    }
+  },
+  "hero": {
+    "tagline": "Simple. Chat first. Vinted only.",
+    "title": {
+      "line1": "Wear the Moment",
+      "line2": "Own the Legacy"
+    },
+    "description": {
+      "line1": "Elite football & NBA shirts for adults and kids",
+      "line2": "Curated quality, fair prices, fast shipping."
+    },
+    "buttons": {
+      "joinDrop": "Join Exclusive Drop",
+      "vintedProfiles": "Open our Vinted Profiles"
+    }
+  },
+  "howToOrder": {
+    "title": "How to Order",
+    "subtitle": "Simple, secure, and exclusively through Vinted",
+    "step1Title": "Pick a shirt on our Vinted profiles",
+    "step1Description": "Browse our curated collection of football and NBA shirts on our dedicated Vinted profiles.",
+    "step2Title": "Message us on Vinted",
+    "step2Description": "Send us a message through Vinted with the shirt you want. We'll respond quickly with availability.",
+    "step3Title": "We send you a discounted Offer",
+    "step3Description": "Receive a special discounted offer directly through Vinted's secure messaging system."
+  },
+  "value": {
+    "forFansTitle": "For Fans",
+    "forFansDescription": "Team colors amplify identity and game-day excitement. The right shirt turns a match into a ritual.",
+    "forCollectorsTitle": "For Collectors",
+    "forCollectorsDescription": "Condition, details and era matter. Our curation focuses on fabric, stitching and iconic seasons.",
+    "forAthletesTitle": "For Athletes",
+    "forAthletesDescription": "Breathable fabrics and clean cuts support comfort and confidence."
+  },
+  "compare": {
+    "title": "Why REPLX",
+    "criteria": "Criteria",
+    "replx": "REPLX",
+    "competitorA": "Competitor A",
+    "competitorB": "Competitor B",
+    "priceQualityRatio": "Price-to-Quality Ratio",
+    "priceQualityReplx": "High",
+    "priceQualityCompA": "Medium",
+    "priceQualityCompB": "Medium",
+    "fabricStitching": "Fabric & Stitching",
+    "fabricStitchingReplx": "Curated, reinforced seams",
+    "fabricStitchingCompA": "Standard",
+    "fabricStitchingCompB": "Standard",
+    "qualityCheck": "Quality Check",
+    "qualityCheckReplx": "Manual inspection",
+    "qualityCheckCompA": "Basic",
+    "qualityCheckCompB": "Basic",
+    "shipping": "Shipping (EU)",
+    "shippingReplx": "Fast handling, 48h dispatch",
+    "shippingCompA": "Slower",
+    "shippingCompB": "Variable",
+    "returns": "Returns",
+    "returnsReplx": "14-day support",
+    "returnsCompA": "Limited",
+    "returnsCompB": "Limited",
+    "customization": "Customization",
+    "customizationReplx": "On request (case-by-case)",
+    "customizationCompA": "—",
+    "customizationCompB": "—",
+    "sizeRange": "Size Range",
+    "sizeRangeReplx": "Kids → Adults",
+    "sizeRangeCompA": "Adults only",
+    "sizeRangeCompB": "Limited Kids",
+    "liveChat": "Live Chat Support",
+    "liveChatReplx": "Vinted chat",
+    "liveChatCompA": "Email only",
+    "liveChatCompB": "—",
+    "returnReplx": "30 Days",
+    "returnCompA": "14 Days",
+    "returnCompB": "No Returns"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Common questions about REPLX",
+    "question1": "Are you affiliated with teams or leagues?",
+    "answer1": "No. REPLX is an independent brand not affiliated with any team or league.",
+    "question2": "Do you sell adults and kids sizes?",
+    "answer2": "Yes — Kids to Adults. Ask us on Vinted for size advice.",
+    "question3": "How fast is shipping?",
+    "answer3": "We aim for 48h dispatch on most items.",
+    "question4": "What's your return policy?",
+    "answer4": "14-day support. Message us on Vinted for help.",
+    "question5": "How do I use the 10% discount?",
+    "answer5": "Submit your email on this page to get a personal code. On Vinted chat, write \"10% via email\" + your code; we'll send a discounted Offer."
+  },
+  "rating": {
+    "text": "Rated 5/5 by our customers"
+  },
+  "social": {
+    "title": "Get in Touch",
+    "subtitle": "Connect with us through our social channels",
+    "vintedProfilesTitle": "Our Vinted Profiles",
+    "vintedNBA": "Vinted — NBA (incl. Kids)",
+    "vintedNBADescription": "Basketball jerseys for all ages",
+    "vintedKids": "Vinted — Kids Kits",
+    "vintedKidsDescription": "Complete kits for young athletes",
+    "vintedFootball": "Vinted — Football",
+    "vintedFootballDescription": "Football shirts collection",
+    "visitProfile": "Visit Profile",
+    "comingSoon": "Coming Soon",
+    "followUs": "Follow Us"
+  },
+  "drops": {
+    "title": "Featured Shirts",
+    "classicFootball": "Classic Football Shirt",
+    "dispatch48h": "48h dispatch",
+    "nbaShirt": "NBA Shirt",
+    "sizeAdvice": "Size advice in chat",
+    "kidsFullKit": "Kids Full Kit",
+    "customization": "Customization",
+    "iconicRetro": "Iconic Retro",
+    "curatedQuality": "Curated quality",
+    "limitedEdition": "Limited Edition",
+    "liveChatSupport": "Live chat support",
+    "dmToOrder": "DM to Order",
+    "joinExclusiveDrop": "Join Exclusive Drop"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "drops": "Drops",
+    "howToOrder": "How to Order",
+    "whyReplx": "Why REPLX",
+    "get10Off": "Get 10% Off",
+    "faq": "FAQ",
+    "social": "Social",
+    "description": "REPLX - Elite football & NBA shirts for adults and kids",
+    "tagline": "Curated quality, fair prices, fast shipping.",
+    "contactUs": "Contact us:",
+    "joinDropList": "Join the Drop List",
+    "dropListDescription": "Get early access and exclusive deals.",
+    "enterEmail": "Enter your email",
+    "agreeToEmails": "I agree to receive emails from REPLX",
+    "join": "Join",
+    "subscribed": "Subscribed!",
+    "thankYou": "Thank you for joining the drop list.",
+    "copyright": "© REPLX. Not affiliated with any team or league.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "rating": {
+    "customerRating": "\"Rated 5/5 by our customers\""
+  },
+  "offer": {
+    "title": "Get 10% via Email",
+    "description": "One unique code per email.",
+    "instructions": "Use it in Vinted chat at checkout. Ends Sep 30, 2025.",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "enterEmail": "Enter your email",
+    "agreeToEmails": "I agree to receive emails from REPLX and accept the Privacy.",
+    "sendCode": "Send me my code",
+    "success": "Success!",
+    "yourCode": "Your unique discount code:",
+    "useCode": "Use this code on Vinted chat to get your 10% discount!",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "pleaseEnterEmail": "❌ Please enter your email",
+    "pleaseEnterValidEmail": "❌ Please enter valid email",
+    "pleaseAcceptTerms": "❌ Please accept privacy terms",
+    "sending": "Sending...",
+    "successMessage": "🎉 Perfect! We've sent your 10% discount code to {{email}}. Check your inbox!",
+    "emailFailedButCodeGenerated": "⚠️ We couldn't send the email, but here's your 10% discount code!",
+    "codeCopied": "✓ Discount code copied to clipboard!",
+    "copyFailed": "❌ Could not copy code. Please select and copy manually."
+  },
+  "header": {
+    "drops": "Drops",
+    "howToOrder": "How to Order",
+    "whyReplx": "Why REPLX",
+    "getDiscount": "Get 10% Off",
+    "faq": "FAQ",
+    "vintedProfiles": "Vinted Profiles",
+    "joinExclusiveDrop": "Join Exclusive Drop"
+  },
+  "hero": {
+    "tagline": "Simple. Chat first. Vinted only.",
+    "title1": "Wear the Moment",
+    "title2": "Own the Legacy",
+    "subtitle1": "Elite football & NBA shirts for adults and kids",
+    "subtitle2": "Curated quality, fair prices, fast shipping.",
+    "joinExclusiveDrop": "Join Exclusive Drop",
+    "openVintedProfiles": "Open our Vinted Profiles"
+  }
+}
