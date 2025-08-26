@@ -86,7 +86,7 @@ const Hero = () => {
             {t('hero.subtitle2')}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button
               onClick={() => scrollToSection('footer')}
               className="bg-[#0A84FF] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-500 transition-all duration-200 transform hover:scale-105 shadow-lg"

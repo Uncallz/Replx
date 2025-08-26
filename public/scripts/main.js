@@ -105,7 +105,6 @@ function attachFormHandlers() {
             
             const result = await subscribeToBrevo(
                 email, 
-                'vip', 
                 'vip'
             );
             
