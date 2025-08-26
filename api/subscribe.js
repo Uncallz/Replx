@@ -93,10 +93,53 @@ export default async function handler(req, res) {
 
     const result = await brevoResponse.json();
     
+    // Invia email transazionale basata sul tipo di lista
+    let emailTemplateId;
+    let emailSubject;
+    let emailParams = {};
+    
+    if (listType === 'discount') {
+      emailTemplateId = 1; // Template per codice sconto
+      emailSubject = 'Il tuo codice sconto del 10%!';
+      emailParams = {
+        DISCOUNT_CODE: 'REPLX09',
+        DISCOUNT_PERCENT: '10%'
+      };
+    } else if (listType === 'vip') {
+      emailTemplateId = 2; // Template per benvenuto VIP
+      emailSubject = 'Benvenuto nella VIP Drop List!';
+      emailParams = {
+        VIP_BENEFITS: 'Accesso esclusivo alle nuove collezioni'
+      };
+    }
+    
+    // Invia email transazionale
+    if (emailTemplateId) {
+      const emailResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'api-key': BREVO_API_KEY
+        },
+        body: JSON.stringify({
+          to: [{ email: email }],
+          templateId: emailTemplateId,
+          params: emailParams
+        })
+      });
+      
+      if (!emailResponse.ok) {
+        console.error('Errore invio email:', await emailResponse.json());
+        // Non bloccare la risposta se l'email fallisce
+      }
+    }
+    
     return res.status(200).json({ 
       success: true, 
-      message: 'Iscrizione completata con successo',
-      contactId: result.id
+      message: listType === 'discount' ? 'Codice sconto inviato via email!' : 'Benvenuto nella VIP Drop List! Controlla la tua email.',
+      contactId: result.id,
+      discountCode: listType === 'discount' ? 'REPLX09' : undefined
     });
 
   } catch (error) {

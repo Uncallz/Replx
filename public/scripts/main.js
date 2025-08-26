@@ -76,7 +76,7 @@ function attachFormHandlers() {
             );
             
             if (result.success) {
-                showMessage('discountMessage', '🎉 Success! Your discount code is: <strong>REPLX09</strong>', 'success');
+                showMessage('discountMessage', '🎉 Codice sconto inviato via email! Controlla la tua casella di posta.', 'success');
                 discountForm.reset();
             } else {
                 showMessage('discountMessage', `❌ ${result.error}`, 'error');
