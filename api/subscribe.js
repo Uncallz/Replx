@@ -48,7 +48,7 @@ export default async function handler(req, res) {
         listId = 2; // Lista per codici sconto
         break;
       case 'vip':
-        listId = 3; // Lista VIP
+        listId = 4; // Lista VIP
         break;
       default:
         return res.status(400).json({ 
