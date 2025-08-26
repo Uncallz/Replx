@@ -71,7 +71,6 @@ function attachFormHandlers() {
             
             const result = await subscribeToBrevo(
                 email, 
-                'discount', 
                 'discount'
             );
             

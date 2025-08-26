@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     let listId;
     switch (listType) {
       case 'discount':
-        listId = 2; // Lista per codici sconto
+        listId = 3; // Lista per codici sconto
         break;
       case 'vip':
         listId = 4; // Lista VIP
