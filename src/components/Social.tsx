@@ -18,7 +18,7 @@ const Social = () => {
       name: t('social.vintedKids'),
       link: 'https://www.vinted.it/member/274101998',
       description: t('social.vintedKidsDescription'),
-      available: true
+      available: false
     },
     {
       name: t('social.vintedFootball'),
