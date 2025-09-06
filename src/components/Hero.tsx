@@ -6,13 +6,41 @@ const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const { ref: contentRef, isVisible } = useRevealOnScroll();
   const [textColor, setTextColor] = useState('white');
+  const [currentLeftImage, setCurrentLeftImage] = useState(0);
+  const [currentRightImage, setCurrentRightImage] = useState(0);
+  const [isLeftTransitioning, setIsLeftTransitioning] = useState(false);
+  const [isRightTransitioning, setIsRightTransitioning] = useState(false);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const leftInterval = setInterval(() => {
+      setIsLeftTransitioning(true);
+      setTimeout(() => {
+        setCurrentLeftImage(prev => prev === 0 ? 1 : 0);
+        setIsLeftTransitioning(false);
+      }, 1000);
+    }, 5000);
+
+    const rightInterval = setInterval(() => {
+      setIsRightTransitioning(true);
+      setTimeout(() => {
+        setCurrentRightImage(prev => prev === 0 ? 1 : 0);
+        setIsRightTransitioning(false);
+      }, 1000);
+    }, 5500); // Slightly offset timing
+
+    return () => {
+      clearInterval(leftInterval);
+      clearInterval(rightInterval);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       if (parallaxRef.current) {
         const scrolled = window.pageYOffset;
         const parallaxOffset = scrolled * 0.3;
+        const heroHeight = window.innerHeight;
         
         // Calculate text color based on scroll progress
         const maxScroll = window.innerHeight * 0.5; // Change color at 50% of viewport height
@@ -28,9 +56,22 @@ const Hero = () => {
         const fadeProgress = Math.min(scrolled / fadeMaxScroll, 1);
         const imageOpacity = Math.max(1 - fadeProgress, 0); // Fade from 1 to 0
         
-        parallaxRef.current.style.setProperty('--parallax-offset-left', `${-parallaxOffset}px`);
-        parallaxRef.current.style.setProperty('--parallax-offset-right', `${parallaxOffset}px`);
+        // Calculate scale effect for images
+        // Scale increases as we scroll down, but returns to normal when back in hero section
+        const scaleMaxScroll = heroHeight * 1.2; // Scale effect over 120% of viewport height
+        const scaleProgress = Math.min(scrolled / scaleMaxScroll, 1);
+        const imageScale = 1 + (scaleProgress * 0.3); // Scale from 1 to 1.3
+        
+        // Calculate separation effect - images move away from center during scroll
+        const separationMaxScroll = heroHeight * 1.0; // Separation effect over 100% of viewport height
+        const separationProgress = Math.min(scrolled / separationMaxScroll, 1);
+        const separationOffset = separationProgress * 100; // Move up to 100px away from center
+        
+        parallaxRef.current.style.setProperty('--parallax-offset-left', `${-parallaxOffset - separationOffset}px`);
+        parallaxRef.current.style.setProperty('--parallax-offset-right', `${parallaxOffset + separationOffset}px`);
         parallaxRef.current.style.setProperty('--image-opacity', imageOpacity.toString());
+        parallaxRef.current.style.setProperty('--image-scale', imageScale.toString());
+        parallaxRef.current.style.setProperty('--separation-offset', separationOffset.toString());
       }
     };
 
@@ -53,16 +94,50 @@ const Hero = () => {
           <img 
             src="/basketball.jpg" 
             alt="Basketball" 
-            className="w-full h-full object-cover transition-opacity duration-300 ease-out" 
-            style={{ opacity: 'var(--image-opacity, 1)' }}
+            className="w-full h-full object-cover transition-all duration-300 ease-out" 
+            style={{ 
+              opacity: 'var(--image-opacity, 1)',
+              transform: 'scale(var(--image-scale, 1))'
+            }}
           />
         </div>
         <div className="absolute right-0 top-0 w-1/2 h-full parallax-right overflow-hidden">
           <img 
             src="/soccer.jpg" 
             alt="Soccer" 
-            className="w-full h-full object-cover transition-opacity duration-300 ease-out" 
-            style={{ opacity: 'var(--image-opacity, 1)' }}
+            className="w-full h-full object-cover transition-all duration-300 ease-out" 
+            style={{ 
+              opacity: 'var(--image-opacity, 1)',
+              transform: 'scale(var(--image-scale, 1))'
+            }}
+          />
+        </div>
+        
+        {/* Left side - Messi and Ronaldo alternating */}
+        <div className="absolute left-0 top-0 w-1/2 h-full parallax-left overflow-hidden">
+          <img
+            src={currentLeftImage === 0 ? '/messi.jpg' : '/ronaldo.jpg'}
+            alt={currentLeftImage === 0 ? 'Messi' : 'Ronaldo'}
+            className={`w-full h-full object-cover brightness-75 hover:brightness-90`}
+            style={{
+              transform: `scale(var(--image-scale, 1))`,
+              opacity: isLeftTransitioning ? 0 : 1,
+              transition: 'opacity 1000ms ease-in-out, transform 100ms ease-out'
+            }}
+          />
+        </div>
+
+        {/* Right side - LeBron and Jordan alternating */}
+        <div className="absolute right-0 top-0 w-1/2 h-full parallax-right overflow-hidden">
+          <img
+            src={currentRightImage === 0 ? '/lebron james.jpg' : '/m jordan.jpg'}
+            alt={currentRightImage === 0 ? 'LeBron James' : 'Michael Jordan'}
+            className={`w-full h-full object-cover brightness-75 hover:brightness-90`}
+            style={{
+              transform: `scale(var(--image-scale, 1))`,
+              opacity: isRightTransitioning ? 0 : 1,
+              transition: 'opacity 1000ms ease-in-out, transform 100ms ease-out'
+            }}
           />
         </div>
       </div>

@@ -19,7 +19,7 @@ const Drops = () => {
       title: t('drops.classicFootball'),
       badge: t('drops.dispatch48h'),
       icon: Clock,
-      images: ["milan.png", "barcellona.png", "inter.png", "roma.png"]
+      images: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"]
     },
     {
       title: t('drops.nbaShirt'),
@@ -31,35 +31,58 @@ const Drops = () => {
       title: t('drops.kidsFullKit'),
       badge: t('drops.customization'),
       icon: Shield,
-      images: ["kid mbappe.png", "kid messi.png", "kid ronaldo.png", "kid yamine.png"]
+      images: ["k 1.png", "k 2.png", "k 3.png", "k 4.png", "k 5.png"]
     },
     {
       title: t('drops.iconicRetro'),
       badge: t('drops.curatedQuality'),
       icon: Clock,
-      images: ["roma inas.png", "fiorentina.png"]
-    },
-    {
-      title: t('drops.limitedEdition'),
-      badge: t('drops.liveChatSupport'),
-      icon: MessageCircle,
-      images: ["atene milan.png"]
+      images: ["r 1.png", "r 2.png", "r 3.png", "r 4.png", "r 5.png", "r 6.png", "r 7.png", "r 8.png", "r 9.png", "r 10.png", "r 11.png", "r 12.png", "r 13.png", "r 14.png", "r 15.png", "r 16.png", "r 17.png", "r 18.png", "r 19.png", "r 20.png"]
     }
   ], [t]);
 
   const [currentImageIndexes, setCurrentImageIndexes] = useState(
     featuredShirts.map(() => 0)
   );
+  const [isTransitioning, setIsTransitioning] = useState(
+    featuredShirts.map(() => true)
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndexes(prevIndexes =>
         prevIndexes.map((currentIndex, shirtIndex) => {
-          const maxIndex = featuredShirts[shirtIndex].images.length - 1;
-          return currentIndex >= maxIndex ? 0 : currentIndex + 1;
+          const nextIndex = currentIndex + 1;
+          const maxIndex = featuredShirts[shirtIndex].images.length;
+          
+          if (nextIndex >= maxIndex) {
+            // Quando raggiungiamo la fine, disabilitiamo la transizione e resettiamo
+            setTimeout(() => {
+              setIsTransitioning(prev => {
+                const newState = [...prev];
+                newState[shirtIndex] = false;
+                return newState;
+              });
+              setCurrentImageIndexes(prev => {
+                const newIndexes = [...prev];
+                newIndexes[shirtIndex] = 0;
+                return newIndexes;
+              });
+              // Riabilitiamo la transizione dopo un frame
+              setTimeout(() => {
+                setIsTransitioning(prev => {
+                  const newState = [...prev];
+                  newState[shirtIndex] = true;
+                  return newState;
+                });
+              }, 50);
+            }, 1000); // Aspettiamo che finisca l'animazione corrente
+          }
+          
+          return nextIndex;
         })
       );
-    }, 2000); // Cambia immagine ogni 2 secondi
+    }, 4000); // Cambia immagine ogni 4 secondi
 
     return () => clearInterval(interval);
   }, [featuredShirts]);
@@ -72,7 +95,8 @@ const Drops = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">{t('drops.title')}</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
             {featuredShirts.map((shirt, index) => {
               const IconComponent = shirt.icon;
               return (
@@ -86,12 +110,15 @@ const Drops = () => {
                     {shirt.images.length > 0 ? (
                       <>
                         <div 
-                          className="flex transition-transform duration-1000 ease-in-out h-full"
+                          className={`flex h-full ${
+                            isTransitioning[index] ? 'transition-transform duration-1000 ease-in-out' : ''
+                          }`}
                           style={{
                             transform: `translateX(-${currentImageIndexes[index] * 100}%)`
                           }}
                         >
-                          {shirt.images.map((image, imgIndex) => (
+                          {/* Duplica le immagini per l'effetto infinito */}
+                          {[...shirt.images, ...shirt.images].map((image, imgIndex) => (
                             <div key={imgIndex} className="w-full h-full flex-shrink-0">
                               <img 
                                 src={image} 
@@ -105,20 +132,7 @@ const Drops = () => {
                             </div>
                           ))}
                         </div>
-                        
-                        {/* Indicators */}
-                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
-                          {shirt.images.map((_, imgIndex) => (
-                            <div
-                              key={imgIndex}
-                              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                                currentImageIndexes[index] === imgIndex 
-                                  ? 'bg-[#0A84FF]' 
-                                  : 'bg-gray-300'
-                              }`}
-                            />
-                          ))}
-                        </div>
+
                       </>
                     ) : (
                       /* PNG Placeholder */
@@ -163,6 +177,7 @@ const Drops = () => {
                 </div>
               );
             })}
+            </div>
           </div>
         </div>
       </div>

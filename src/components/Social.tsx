@@ -16,15 +16,15 @@ const Social = () => {
     },
     {
       name: t('social.vintedKids'),
-      link: 'https://www.vinted.it/member/274101998',
+      link: 'https://www.vinted.it/member/48839245',
       description: t('social.vintedKidsDescription'),
-      available: false
+      available: true
     },
     {
       name: t('social.vintedFootball'),
-      link: '#',
+      link: 'https://www.vinted.it/member/48839245',
       description: t('social.vintedFootballDescription'),
-      available: false
+      available: true
     }
   ];
 

@@ -2,10 +2,30 @@
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 import { useLanguage } from '../hooks/useLanguage';
 import { Check, X } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 const Compare = () => {
   const { ref: sectionRef, isVisible } = useRevealOnScroll();
   const { t } = useLanguage();
+  const backgroundRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (backgroundRef.current) {
+        const rect = backgroundRef.current.getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)));
+        
+        const scale = 1 + (scrollProgress * 0.1);
+        const opacity = Math.max(0.8, 1 - (scrollProgress * 0.2));
+        
+        backgroundRef.current.style.transform = `scale(${scale})`;
+        backgroundRef.current.style.opacity = opacity.toString();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const comparisonData = [
     { criteria: t('compare.priceQualityRatio'), replx: t('compare.priceQualityReplx'), competitorA: t('compare.priceQualityCompA'), competitorB: t('compare.priceQualityCompB') },
@@ -30,14 +50,19 @@ const Compare = () => {
   return (
     <section 
       id="compare" 
-      className="py-20 bg-gray-50 dark:bg-gray-900 relative"
-      style={{
-        backgroundImage: 'url(/together.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
     >
+      <div 
+         ref={backgroundRef}
+         className="absolute inset-0 transition-all duration-300 ease-out"
+         style={{
+           backgroundImage: 'url(/pugno.png)',
+           backgroundSize: 'cover',
+           backgroundPosition: 'center',
+           backgroundRepeat: 'no-repeat',
+           transformOrigin: 'center'
+         }}
+       ></div>
       {/* Background overlay */}
       <div className="absolute inset-0 bg-white dark:bg-gray-900 bg-opacity-70 dark:bg-opacity-80"></div>
       

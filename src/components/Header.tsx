@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 transition-all duration-300 ${
+    <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-65 dark:bg-gray-900 dark:bg-opacity-65 backdrop-blur-sm transition-all duration-300 ${
       isScrolled ? 'shadow-md dark:shadow-gray-700/20' : ''
     } reveal-on-scroll ${isVisible ? 'revealed' : ''}`}>
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -44,7 +44,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
           <button
             onClick={() => scrollToSection('drops')}
             className="text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-yellow-500 hover:text-white"
@@ -137,12 +137,14 @@ const Header = () => {
           </button>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <LanguageSelector />
-          <ThemeToggle />
+        <div className="flex items-center space-x-6 lg:space-x-8">
+          <div className="flex items-center space-x-3">
+            <LanguageSelector />
+            <ThemeToggle />
+          </div>
           <button
             onClick={() => scrollToSection('footer')}
-            className="bg-[#0A84FF] text-white px-6 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-200 transform hover:scale-105"
+            className="bg-[#0A84FF] text-white px-6 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-200 transform hover:scale-105 whitespace-nowrap ml-4"
           >
             {t('header.joinExclusiveDrop')}
           </button>
